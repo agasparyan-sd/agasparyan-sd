@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag hello-node-world:$(date +%s)
+      run: docker build . --file Dockerfile --tag hello-node-world
       
     - name: Download Sysdig CLI
       run: |
@@ -24,4 +24,4 @@ jobs:
         chmod +x ./sysdig-cli-scanner
     
     - name: Scan Image
-      run: SECURE_API_TOKEN=7d9fd1d2-e2b2-4d23-8d29-dfbe44b0663e ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com ${{ github.repository }}
+      run: SECURE_API_TOKEN=7d9fd1d2-e2b2-4d23-8d29-dfbe44b0663e ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com hello-node-world
