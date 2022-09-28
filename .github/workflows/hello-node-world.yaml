@@ -24,4 +24,4 @@ jobs:
         chmod +x ./sysdig-cli-scanner
     
     - name: Scan Image
-      run: SECURE_API_TOKEN=7d9fd1d2-e2b2-4d23-8d29-dfbe44b0663e ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com test
+      run: SECURE_API_TOKEN=7d9fd1d2-e2b2-4d23-8d29-dfbe44b0663e ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com ${{ github.repository }}
