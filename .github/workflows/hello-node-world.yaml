@@ -21,5 +21,8 @@ jobs:
     - name: Download Sysdig CLI
       run: curl -LO "https://download.sysdig.com/scanning/bin/sysdig-cli-scanner/$(curl -L -s https://download.sysdig.com/scanning/sysdig-cli-scanner/latest_version.txt)/darwin/amd64/sysdig-cli-scanner"
 
+    - name: Download Sysdig CLI
+      run: chmod +x ./sysdig-cli-scanner
+    
     - name: Scan Image
       run: SECURE_API_TOKEN=7d9fd1d2-e2b2-4d23-8d29-dfbe44b0663e ./sysdig-cli-scanner --apiurl https://us2.app.sysdig.com test
